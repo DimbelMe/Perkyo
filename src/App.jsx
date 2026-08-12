@@ -12,13 +12,16 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Hero
+      <section className="Main-Container">
+        <Hero
         categoriaSeleccionada={categoriaSeleccionada}
         setCategoriaSeleccionada={setCategoriaSeleccionada}
-      />
-      <Catalogo
-        categoriaSeleccionada={categoriaSeleccionada}
-      />
+        />
+        <Catalogo
+          categoriaSeleccionada={categoriaSeleccionada}
+        />
+      </section>
+      
     </>
   )
 }
