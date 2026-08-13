@@ -11,7 +11,7 @@ function Hero({ setCategoriaSeleccionada }) {
     return (
         <section className="Main-Container">
             <div className="Banner">
-                <h2>Perkyo - Poleras</h2>
+                <img src="./img/banner.png" alt="" />
             </div>
             <div className="Categorias">
                 <button

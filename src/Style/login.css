@@ -1,5 +1,8 @@
 body {
-    background-color: #483d8b;
+    background-color: #121024;
+    position: relative;
+    overflow-x: hidden;
+    isolation: isolate;
 }
 
 h1 {
@@ -17,12 +20,14 @@ h2 {
 }
 
 .Main-Container {
-    width: 90%;
+    width: 1600px;
+    max-width: 100%;
     margin: 15px auto 0;
     background-color: #9d93df;
     color: black;
     padding: 20px;
     border-radius: 8px;
+
 }
 
 .Main-Container::before {
@@ -98,20 +103,27 @@ nav a:hover,
 
 /* NEXT SECTION: HERO*/
 
-
-
 .Banner {
-    padding: 5px;
-    box-shadow: 0px 4px 6px #36324d;
     margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 8px 8px 8px #6957db;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
 }
 
 .Categorias {
     display: flex;
+    padding: 15px;
+    background-color: #312a5c;
     justify-content: center;
     align-items: center;
     gap: 60px;
     margin: 15px 0;
+    border-radius: 16px;
+
 }
 
 .Categorias button {
@@ -129,13 +141,13 @@ nav a:hover,
     cursor: pointer;
 }
 
+/* NEXT SECTION: CATALOGO*/
+
 .catalogo {
-    width: 90%;
-    max-width: 1200px;
-    margin: 30px auto;
+    max-width: 90%;
+    margin: 15px auto;
     padding: 20px;
     border-radius: 8px;
-    background-color: rgb(106, 89, 221, 0.5);
 }
 
 .item {
@@ -164,23 +176,28 @@ nav a:hover,
 }
 
 .Card {
-    width: 140px;
+    width: 240px;
     border: 2px solid #111;
     background: #4c428f;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .Card img {
     display: block;
     width: 100%;
-    height: 190px;
+    height: 220px;
     object-fit: cover;
+    
 }
 
 .CardImage {
     position: relative;
     width: 100%;
-    height: 190px;
+    height: 300px;
     overflow: hidden;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .CardImage img {
@@ -210,4 +227,84 @@ nav a:hover,
     padding: 8px;
 }
 
-/* NEXT SECTION: HERO*/
+/* NEXT SECTION: FOOTER */
+
+/* NEXT SECTION: ANIMATIONS */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(circle at 5% 15%, rgba(106, 89, 221, 0.35) 0 15px, transparent 16px),
+        radial-gradient(circle at 12% 35%, rgba(79, 195, 247, 0.25) 0 10px, transparent 11px),
+        radial-gradient(circle at 4% 60%, rgba(157, 147, 223, 0.3) 0 8px, transparent 9px),
+        radial-gradient(circle at 15% 80%, rgba(106, 89, 221, 0.3) 0 13px, transparent 14px),
+
+        radial-gradient(circle at 95% 10%, rgba(79, 195, 247, 0.25) 0 12px, transparent 13px),
+        radial-gradient(circle at 88% 25%, rgba(106, 89, 221, 0.35) 0 8px, transparent 9px),
+        radial-gradient(circle at 97% 45%, rgba(157, 147, 223, 0.25) 0 15px, transparent 16px),
+        radial-gradient(circle at 90% 65%, rgba(79, 195, 247, 0.25) 0 9px, transparent 10px),
+        radial-gradient(circle at 96% 85%, rgba(106, 89, 221, 0.3) 0 13px, transparent 14px);
+
+    filter: blur(2px);
+
+    animation: floatLeft 10s ease-in-out infinite;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(79, 195, 247, 0.25) 0%,
+        rgba(79, 195, 247, 0.08) 35%,
+        transparent 70%
+    );
+
+    filter: blur(30px);
+
+    bottom: 5%;
+    right: -350px;
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: floatRight 12s ease-in-out infinite;
+}
+
+@keyframes floatLeft {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(80px, -40px);
+    }
+}
+
+@keyframes floatRight {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-80px, 40px);
+    }
+}
+
+body::before {
+    animation: floatOrb 8s ease-in-out infinite;
+}
+
+body::after {
+    animation: floatOrb 11s ease-in-out infinite reverse;
+}
