@@ -12,11 +12,12 @@ function App() {
   return (
     <>
       <Navbar/>
-      <section className="Main-Container">
+      
         <Hero
         categoriaSeleccionada={categoriaSeleccionada}
         setCategoriaSeleccionada={setCategoriaSeleccionada}
         />
+      <section className="Main-Container">
         <Catalogo
           categoriaSeleccionada={categoriaSeleccionada}
         />
