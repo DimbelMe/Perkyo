@@ -218,59 +218,63 @@ nav a:hover,
     border-radius: 8px;
 }
 
-
 .item img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
+    
 }
 
 .item p {
     margin: 0;
     padding: 10px;
+    
 }
 
 .Cards {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
+    
 }
 
 .Card {
     width: 240px;
+    color: white;
+    background: rgb(5, 5, 5);
     border: 2px solid #111;
-    background: #4c428f;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-.Card img {
-    display: block;
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:
+        0 0 3px #8f82ff,
+        0 0 7px #6a59dd,
+        0 0 14px rgba(106, 89, 221, 0.8),
+        0 0 25px rgba(106, 89, 221, 0.45),
+        inset 0 0 5px rgba(140, 124, 255, 0.5);
 }
 
 .CardImage {
     position: relative;
     width: 100%;
     height: 300px;
-    overflow: hidden;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
 }
 
-.CardImage img {
-    display: block;
+.CardBack,
+.CardFront {
+    width: 99%;
+    height: 99%;
+    padding: 1%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.CardBack img,
+.CardFront img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.CardBack {
-    position: relative;
+    display: block;
 }
 
 .CardFront {
@@ -280,13 +284,14 @@ nav a:hover,
     transition: opacity 0.2s ease;
 }
 
+
 .Card:hover .CardFront {
     opacity: 1;
 }
 
 .Card span {
     display: block;
-    padding: 8px;
+    padding: 10px 15px;
 }
 
 /* NEXT SECTION: FOOTER */
