@@ -1,3 +1,5 @@
+import { FaInstagram } from "react-icons/fa";
+
 function Navbar() {
     return (
         <header className="navbar">
@@ -10,7 +12,13 @@ function Navbar() {
                 <a href="#">Catalogo</a>
             </nav>
             <div className="profile">
-                <span><a href="/login">Iniciar Sesión</a></span>
+                <span>
+                    <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram />
+                        
+                        PERKYŌ
+                    </a>
+                </span>
             </div>
         </header>
     );

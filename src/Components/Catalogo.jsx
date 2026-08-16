@@ -10,56 +10,56 @@ function Catalogo({ categoriaSeleccionada }) {
 
     const items = [
   {
-    name: "Ace",
+    name: "ACE",
     categoria: "Anime",
     imgBack: "./img/ace-back.png",
     imgFront: "./img/ace-front.png"
   },
   {
-    name: "Chopper",
-    categoria: "Anime",
+    name: "BRIAN O'CONNER",
+    categoria: "Peliculas",
     imgBack: "./img/chopper-back.png",
     imgFront: "./img/chopper-front.png"
   },
   {
-    name: "Death",
+    name: "LAW",
     categoria: "Anime",
     imgBack: "./img/death-back.png",
     imgFront: "./img/death-front.png"
   },
   {
-    name: "DK",
-    categoria: "Peliculas",
+    name: "ZORO",
+    categoria: "Anime",
     imgBack: "./img/dk-back.png",
     imgFront: "./img/dk-front.png"
   },
   {
-    name: "Guts",
+    name: "GUTS",
     categoria: "Anime",
     imgBack: "./img/guts-back.png",
     imgFront: "./img/guts-front.png"
   },
   {
-    name: "Kurapika",
+    name: "KURAPIKA",
     categoria: "Anime",
     imgBack: "./img/kura-back.png",
     imgFront: "./img/kura-front.png"
   },
   {
-    name: "Luffy",
+    name: "GEAR 5",
     categoria: "Anime",
     imgBack: "./img/luffy-back.png",
     imgFront: "./img/luffy-front.png"
   },
   {
-    name: "Shingeki",
+    name: "EREN",
     categoria: "Anime",
     imgBack: "./img/shingeki-back.png",
     imgFront: "./img/shingeki-front.png"
   },
   {
-    name: "?????",
-    categoria: "Otros",
+    name: "EREN TITAN",
+    categoria: "Anime",
     imgBack: "./img/what-back.png",
     imgFront: "./img/what-front.png"
   }
