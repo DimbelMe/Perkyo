@@ -58,7 +58,7 @@ h2 {
     padding: 6px 40px;
     background-color: #312a5c;
     color: white;
-
+    z-index: 10;
     
 }
 
