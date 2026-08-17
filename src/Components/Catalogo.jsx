@@ -7,59 +7,107 @@ function Catalogo({ categoriaSeleccionada }) {
 
     const items = [
         {
-            name: "ACE",
-            categoria: "Anime",
-            imgBack: "./img/ace-back.png",
-            imgFront: "./img/ace-front.png"
+          name: "ACE",
+          categoria: "Anime",
+          imgBack: "./img/ace-back.png",
+          imgFront: "./img/ace-front.png"
         },
         {
-            name: "BRIAN O'CONNER",
-            categoria: "Peliculas",
-            imgBack: "./img/chopper-back.png",
-            imgFront: "./img/chopper-front.png"
+          name: "BRIAN O'CONNER",
+          categoria: "Peliculas",
+          imgBack: "./img/chopper-back.png",
+          imgFront: "./img/chopper-front.png"
         },
         {
-            name: "LAW",
-            categoria: "Anime",
-            imgBack: "./img/death-back.png",
-            imgFront: "./img/death-front.png"
+          name: "LAW",
+          categoria: "Anime",
+          imgBack: "./img/death-back.png",
+          imgFront: "./img/death-front.png"
         },
         {
-            name: "ZORO",
-            categoria: "Anime",
-            imgBack: "./img/dk-back.png",
-            imgFront: "./img/dk-front.png"
+          name: "ZORO",
+          categoria: "Anime",
+          imgBack: "./img/dk-back.png",
+          imgFront: "./img/dk-front.png"
         },
         {
-            name: "GUTS",
-            categoria: "Anime",
-            imgBack: "./img/guts-back.png",
-            imgFront: "./img/guts-front.png"
+          name: "GUTS",
+          categoria: "Anime",
+          imgBack: "./img/guts-back.png",
+          imgFront: "./img/guts-front.png"
         },
         {
-            name: "KURAPIKA",
-            categoria: "Anime",
-            imgBack: "./img/kura-back.png",
-            imgFront: "./img/kura-front.png"
+          name: "KURAPIKA",
+          categoria: "Anime",
+          imgBack: "./img/kura-back.png",
+          imgFront: "./img/kura-front.png"
         },
         {
-            name: "GEAR 5",
-            categoria: "Anime",
-            imgBack: "./img/luffy-back.png",
-            imgFront: "./img/luffy-front.png"
+          name: "GEAR 5",
+          categoria: "Anime",
+          imgBack: "./img/luffy-back.png",
+          imgFront: "./img/luffy-front.png"
         },
         {
-            name: "EREN",
-            categoria: "Anime",
-            imgBack: "./img/shingeki-back.png",
-            imgFront: "./img/shingeki-front.png"
+          name: "EREN",
+          categoria: "Anime",
+          imgBack: "./img/shingeki-back.png",
+          imgFront: "./img/shingeki-front.png"
         },
         {
-            name: "EREN TITAN",
-            categoria: "Anime",
-            imgBack: "./img/what-back.png",
-            imgFront: "./img/what-front.png"
-        }
+          name: "EREN TITAN",
+          categoria: "Anime",
+          imgBack: "./img/what-back.png",
+          imgFront: "./img/what-front.png"
+        },
+        {
+          name: "FIERROS",
+          categoria: "Gym",
+          imgBack: "./img/fierros.png",
+          imgFront: "./img/gym-meme-front.png"
+        },
+        {
+          name: "BULMA",
+          categoria: "Gym",
+          imgBack: "./img/bulma-saiyajin.png",
+          imgFront: "./img/gym-front.png"
+        },
+        {
+          name: "VEGETA",
+          categoria: "Gym",
+          imgBack: "./img/vegeta-saiyajin.png",
+          imgFront: "./img/gym-front.png"
+        },
+        {
+          name: "SAITAMA",
+          categoria: "Gym",
+          imgBack: "./img/saitama.png",
+          imgFront: "./img/gym-front.png"
+        },
+        {
+          name: "KIRBY",
+          categoria: "Gym",
+          imgBack: "./img/kirby.png",
+          imgFront: "./img/gym-front.png"
+        },
+        {
+          name: "PROTEINA",
+          categoria: "Gym",
+          imgBack: "./img/protein.png",
+          imgFront: "./img/gym-front.png"
+        },
+        {
+          name: "INDEPENDIENTE",
+          categoria: "Gym",
+          imgBack: "./img/mujer-independiente.png",
+          imgFront: "./img/gym-meme-front.png"
+        },
+        {
+          name: "RESULTADOS",
+          categoria: "Gym",
+          imgBack: "./img/resultado.png",
+          imgFront: "./img/gym-meme-front.png"
+        },
     ];
 
     const itemsFiltrados =

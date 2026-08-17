@@ -4,6 +4,7 @@ function Hero({ setCategoriaSeleccionada }) {
         "Anime",
         "Peliculas",
         "Series",
+        "Gym",
         "Videojuegos",
         "Otros"
     ];
