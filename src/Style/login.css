@@ -510,19 +510,360 @@ body::after {
     right: 20px;
 }
 
-.lightbox-name {
-    position: absolute;
-    bottom: 35px;
-
-    color: white;
-    font-size: 24px;
-    font-family: serif;
-}
-
 .lightbox-counter {
     position: absolute;
     bottom: -15px;
 
     color: rgba(255, 255, 255, 0.6);
     font-size: 14px;
+}
+
+
+/* NEXT SECTION: MEDIA / RESPONSIVENESS */
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* TABLET / SMALL DESKTOP */
+@media (max-width: 1200px) {
+
+    .Main-Container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        padding: 6px 20px;
+    }
+
+    nav {
+        gap: 25px;
+    }
+
+    nav img {
+        height: 65px;
+    }
+
+    .logo img {
+        height: 60px;
+        padding-right: 20px;
+    }
+
+    .profile {
+        padding-left: 20px;
+    }
+
+    .profile a {
+        font-size: 17px;
+    }
+
+    /* CATEGORIES */
+    .Categorias {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    /* CATALOG */
+    .Cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+
+    .Card {
+        width: 100%;
+    }
+
+    .CardImage {
+        height: auto;
+        aspect-ratio: 1 / 1.25;
+    }
+}
+
+
+/* TABLET */
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px 15px;
+    }
+
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo img {
+        height: 55px;
+        padding-right: 0;
+        border-right: none;
+    }
+
+    nav {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav img {
+        height: 55px;
+    }
+
+    .profile {
+        padding-left: 15px;
+    }
+
+    .profile a {
+        font-size: 16px;
+    }
+
+    /* HERO */
+    .Banner {
+        margin: 10px auto;
+        border-radius: 15px;
+    }
+
+    /* CATEGORIES */
+    .Categorias {
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .Categorias button {
+        width: 110px;
+        height: 45px;
+    }
+
+    /* CATALOG */
+    .catalogo {
+        max-width: 95%;
+    }
+
+    .Cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .Card {
+        border-radius: 20px;
+    }
+
+    .CardImage {
+        height: auto;
+        aspect-ratio: 1 / 1.25;
+    }
+
+    /* LIGHTBOX */
+    .lightbox-content {
+        width: 95vw;
+        height: 90vh;
+    }
+
+    .lightbox-image {
+        max-width: 80%;
+        max-height: 75vh;
+    }
+
+    .carousel-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .carousel-arrow.left {
+        left: 5px;
+    }
+
+    .carousel-arrow.right {
+        right: 5px;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .Main-Container {
+        padding: 10px;
+        margin-top: 5px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    nav {
+        width: 100%;
+        gap: 15px;
+    }
+
+    nav img {
+        height: 45px;
+    }
+
+    nav a,
+    .profile a {
+        font-size: 14px;
+    }
+
+    .profile {
+        padding-left: 10px;
+    }
+
+    .profile a {
+        gap: 5px;
+    }
+
+    .profile a svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* HERO */
+    .Banner {
+        width: 100%;
+        margin: 8px auto;
+        border-radius: 12px;
+    }
+
+    /* CATEGORIES */
+    .Categorias {
+        padding: 10px 5px;
+        gap: 10px;
+        margin: 15px 0 0;
+    }
+
+    .Categorias button {
+        width: calc(50% - 10px);
+        max-width: 130px;
+        height: 42px;
+        border-radius: 21px;
+        font-size: 14px;
+    }
+
+    .Categorias button:hover {
+        transform: translateY(-5%);
+    }
+
+    /* CATALOG */
+    .catalogo {
+        max-width: 100%;
+    }
+
+    .Cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .Card {
+        width: 100%;
+        border-radius: 18px;
+    }
+
+    .CardImage {
+        height: auto;
+        aspect-ratio: 1 / 1.25;
+    }
+
+    .CardBack,
+    .CardFront {
+        border-radius: 14px;
+    }
+
+    .Card span {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    /* LIGHTBOX */
+    .lightbox-content {
+        width: 100vw;
+        height: 90vh;
+    }
+
+    .lightbox-image {
+        max-width: 85%;
+        max-height: 70vh;
+        border-radius: 10px;
+    }
+
+    .lightbox-close {
+        top: 0;
+        right: 10px;
+        font-size: 35px;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .carousel-arrow.left {
+        left: 5px;
+    }
+
+    .carousel-arrow.right {
+        right: 5px;
+    }
+
+    .lightbox-counter {
+        bottom: 0;
+    }
+
+    /* BACKGROUND GLOW */
+    body::after {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+
+/* VERY SMALL PHONES */
+@media (max-width: 400px) {
+
+    .Cards {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .Categorias button {
+        width: 100px;
+        font-size: 13px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav img {
+        height: 40px;
+    }
+
+    .profile a {
+        font-size: 13px;
+    }
+
+    .Card span {
+        font-size: 13px;
+        padding: 7px;
+    }
 }

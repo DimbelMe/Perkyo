@@ -108,6 +108,19 @@ function Catalogo({ categoriaSeleccionada }) {
           imgBack: "./img/resultado.png",
           imgFront: "./img/gym-meme-front.png"
         },
+        {
+          name: "DEADLIFT",
+          categoria: "Gym",
+          imgBack: "./img/deadlift.png",
+          imgFront: "./img/gym-meme-front.png"
+        },
+        {
+          name: "GOALS",
+          categoria: "Gym",
+          imgBack: "./img/goal.png",
+          imgFront: "./img/gym-meme-front.png"
+        }
+
     ];
 
     const itemsFiltrados =
