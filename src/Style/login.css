@@ -74,6 +74,11 @@ nav {
     gap: 45px;
 }
 
+nav img {
+    height: 80px;
+    width: auto;
+}
+
 nav a,
 .profile a {
     color: white;
@@ -416,4 +421,108 @@ body::after {
         transform: translate(-100px, 250px) scale(0.95);
         opacity: 0.7;
     }
+}
+
+
+/* NEXT SECTION: LIGHTBOX FOR ZOOMING */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(90vw, 1000px);
+    height: min(90vh, 800px);
+}
+
+.lightbox-image {
+    max-width: 75%;
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    filter: drop-shadow(0 0 25px rgba(130, 100, 255, 0.7));
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+
+    border: none;
+    background: none;
+
+    color: white;
+    font-size: 45px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+.carousel-arrow {
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    color: white;
+    font-size: 40px;
+    line-height: 45px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.carousel-arrow:hover {
+    background: rgba(140, 110, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.carousel-arrow.left {
+    left: 20px;
+}
+
+.carousel-arrow.right {
+    right: 20px;
+}
+
+.lightbox-name {
+    position: absolute;
+    bottom: 35px;
+
+    color: white;
+    font-size: 24px;
+    font-family: serif;
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: -15px;
+
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
 }

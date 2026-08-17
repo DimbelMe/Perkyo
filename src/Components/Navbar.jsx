@@ -4,18 +4,15 @@ function Navbar() {
     return (
         <header className="navbar">
             <section className="logo">
-                <img src="/img/logo-no-bg.png" alt="Logo navegación" />
+                <img src="./img/logo-no-bg-white.png" alt="Logo navegación" />
             </section>
             <nav>
-                <a href="#">Inicio</a>
-                <div className="divisor"></div>
-                <a href="#">Catalogo</a>
+                <img src="./img/perkyo.png" alt="" />
             </nav>
             <div className="profile">
                 <span>
-                    <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/perkyo.store/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram />
-                        
                         PERKYŌ
                     </a>
                 </span>
