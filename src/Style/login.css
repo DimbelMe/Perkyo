@@ -529,12 +529,17 @@ body::after {
     font-size: 14px;
 }
 
+/* NEXT SECTION: FOOTER */
+
+footer{
+    background-color: #312a5c;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
 
 /* NEXT SECTION: MEDIA / RESPONSIVENESS */
-
-/* ================================
-   RESPONSIVE DESIGN
-   ================================ */
 
 /* TABLET / SMALL DESKTOP */
 @media (max-width: 1200px) {

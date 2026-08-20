@@ -118,7 +118,49 @@ function Catalogo({ categoriaSeleccionada }) {
           name: "GOALS",
           categoria: "Gym",
           imgBack: "./img/goal.png",
-          imgFront: "./img/gym-meme-front.png"
+          imgFront: "./img/gym-front.png"
+        },
+        {
+          name: "MOTHER OF CATS",
+          categoria: "Otros",
+          imgBack: "./img/mother.png",
+          imgFront: "./img/samurai-front.png"
+        },
+        {
+          name: "SAMURAI",
+          categoria: "Otros",
+          imgBack: "./img/samurai-back.png",
+          imgFront: "./img/samurai-front.png"
+        },
+        {
+          name: "SKYLINE",
+          categoria: "Otros",
+          imgBack: "./img/skyline.png",
+          imgFront: "./img/gtr-front.png"
+        },
+        {
+          name: "BENDER",
+          categoria: "Series",
+          imgBack: "./img/bender.png",
+          imgFront: "./img/samurai-front.png"
+        },
+        {
+          name: "GTR",
+          categoria: "Otros",
+          imgBack: "./img/gtr-back.png",
+          imgFront: "./img/gtr-front.png"
+        },
+        {
+          name: "WINGS OF FIRE",
+          categoria: "Otros",
+          imgBack: "./img/Wings-Of-Fire-Back.png",
+          imgFront: "./img/Wings-Of-Fire-Front.png"
+        },
+        {
+          name: "WINGS OF FIRE 2",
+          categoria: "Otros",
+          imgBack: "./img/wings-of-fire-back-2.png",
+          imgFront: "./img/wings-of-fire-front-2.png"
         }
 
     ];

@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
 import './Style/login.css'
 import Catalogo from './Components/Catalogo'
+import Footer from './Components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,7 @@ function App() {
           categoriaSeleccionada={categoriaSeleccionada}
         />
       </section>
-      
+      <Footer/>
     </>
   )
 }
