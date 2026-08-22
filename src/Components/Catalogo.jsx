@@ -124,7 +124,7 @@ function Catalogo({ categoriaSeleccionada }) {
           name: "MOTHER OF CATS",
           categoria: "Otros",
           imgBack: "./img/mother.png",
-          imgFront: "./img/samurai-front.png"
+          imgFront: "./img/black-back.png"
         },
         {
           name: "SAMURAI",
@@ -142,7 +142,7 @@ function Catalogo({ categoriaSeleccionada }) {
           name: "BENDER",
           categoria: "Series",
           imgBack: "./img/bender.png",
-          imgFront: "./img/samurai-front.png"
+          imgFront: "./img/black-back.png"
         },
         {
           name: "GTR",
@@ -161,6 +161,18 @@ function Catalogo({ categoriaSeleccionada }) {
           categoria: "Otros",
           imgBack: "./img/wings-of-fire-back-2.png",
           imgFront: "./img/wings-of-fire-front-2.png"
+        },
+        {
+          name: "CLOVE",
+          categoria: "Videojuegos",
+          imgBack: "./img/clove-back.png",
+          imgFront: "./img/clove-front.png"
+        },
+        {
+          name: "HxH",
+          categoria: "Anime",
+          imgBack: "./img/hxh-back.png",
+          imgFront: "./img/hxh-front.png"
         }
 
     ];
