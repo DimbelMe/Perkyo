@@ -1,0 +1,30 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/img/"
+public_folder: "public/img/"
+
+collections:
+  - name: "objects"
+    label: "Gallery Objects"
+    folder: "src/content/objects"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - label: "Name"
+        name: "name"
+        widget: "string"
+
+      - label: "Category"
+        name: "category"
+        widget: "string"
+
+      - label: "Front Image"
+        name: "imgFront"
+        widget: "image"
+
+      - label: "Back Image"
+        name: "imgBack"
+        widget: "image"
