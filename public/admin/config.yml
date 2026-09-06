@@ -1,15 +1,9 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "public/img/"
-public_folder: "public/img/"
-
 collections:
   - name: "objects"
     label: "Gallery Objects"
     folder: "src/content/objects"
     create: true
+    format: "json"
     slug: "{{slug}}"
 
     fields:
@@ -18,13 +12,19 @@ collections:
         widget: "string"
 
       - label: "Category"
-        name: "category"
-        widget: "string"
-
-      - label: "Front Image"
-        name: "imgFront"
-        widget: "image"
+        name: "categoria"
+        widget: "select"
+        options:
+          - "Anime"
+          - "Peliculas"
+          - "Series"
+          - "Videojuegos"
+          - "Otros"
 
       - label: "Back Image"
         name: "imgBack"
+        widget: "image"
+
+      - label: "Front Image"
+        name: "imgFront"
         widget: "image"

@@ -1,0 +1,6 @@
+{
+  "name": "KIRBY",
+  "categoria": "Gym",
+  "imgBack": "./img/gallery/kirby.png",
+  "imgFront": "./img/gallery/gym-front.png"
+}
