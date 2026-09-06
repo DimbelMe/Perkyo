@@ -1,7 +1,14 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/img/gallery"
+public_folder: "/img/gallery"
+
 collections:
   - name: "objects"
     label: "Gallery Objects"
-    folder: "src/content/objects"
+    folder: "src/Content/Objects"
     create: true
     format: "json"
     slug: "{{slug}}"
