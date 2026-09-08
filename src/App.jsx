@@ -10,6 +10,9 @@ import { AuthProvider } from "./Admin/AuthContext";
 import Login from "./Admin/Login";
 import ProtectedRoute from "./Admin/ProtectedRoute";
 import AdminDashboard from "./Admin/AdminDashboard.jsx";
+import ClientesList from "./Admin/ClientesList";
+import MaterialesList from "./Admin/MaterialesList";
+import PedidosList from "./Admin/PedidosList";
 
 function PublicSite() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Todos");
@@ -41,6 +44,30 @@ function App() {
             element={
               <ProtectedRoute>
                 <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/panel/clientes"
+            element={
+              <ProtectedRoute>
+                <ClientesList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/panel/materiales"
+            element={
+              <ProtectedRoute>
+                <MaterialesList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/panel/pedidos"
+            element={
+              <ProtectedRoute>
+                <PedidosList />
               </ProtectedRoute>
             }
           />
