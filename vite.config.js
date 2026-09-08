@@ -1,11 +1,19 @@
 import { defineConfig } from 'vite'
-import react, { reactCompilerPreset } from '@vitejs/plugin-react'
-import babel from '@rolldown/plugin-babel'
+import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    babel({ presets: [reactCompilerPreset()] })
+    {
+      name: 'serve-admin-index',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url === '/admin' || req.url === '/admin/') {
+            req.url = '/admin/index.html';
+          }
+          next();
+        });
+      },
+    },
   ],
 })
