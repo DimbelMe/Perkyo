@@ -275,7 +275,7 @@
   padding: 0.4rem 0.9rem;
   font-size: 0.8rem;
   cursor: pointer;
-  margin-right: 0.4rem;
+  margin-right: 0.4rem; 
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 
@@ -414,8 +414,144 @@
 }
 
 
-@media (max-width: 480px) {
+/* ============================
+   RESPONSIVE / MEDIA QUERIES
+   ============================ */
+
+/* TABLET / SMALL DESKTOP */
+@media (max-width: 1200px) {
+  .panel-page {
+    padding: 2rem;
+  }
+
+  .panel-table {
+    font-size: 0.85rem;
+  }
+
+  .panel-table th,
+  .panel-table td {
+    padding: 0.7rem 0.8rem;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .panel-page {
+    padding: 1.5rem;
+  }
+
+  .panel-title {
+    font-size: 1.5rem;
+  }
+
+  .panel-dashboard-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .panel-dashboard-tile {
+    padding: 1.4rem;
+    font-size: 1rem;
+  }
+
+  /* Tables get too cramped to squeeze columns further —
+     let the card scroll horizontally instead of breaking layout */
+  .panel-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .panel-table {
+    min-width: 640px;
+  }
+
+  /* Header stacks instead of trying to keep the title
+     mathematically centered alongside the logout button */
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-height: unset;
+  }
+
+  .panel-title--centered {
+    position: static;
+    transform: none;
+    text-align: left;
+  }
+
+  .panel-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .panel-page {
+    padding: 1rem;
+  }
+
+  .panel-login {
+    padding: 1.25rem;
+  }
+
   .panel-login__card {
-    padding: 1.75rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .panel-login__wordmark {
+    font-size: 1.6rem;
+  }
+
+  .panel-title {
+    font-size: 1.3rem;
+    margin: 0.5rem 0 1rem;
+  }
+
+  .panel-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-btn {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    margin-right: 0.3rem;
+  }
+
+  .panel-table input,
+  .panel-table select {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  /* Ambient background glow is expensive and mostly invisible
+     behind a full-width card on small screens */
+  .panel-login::after {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 400px) {
+  .panel-login__card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .panel-table {
+    min-width: 560px;
+  }
+
+  .panel-logout {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .panel-dashboard-tile {
+    padding: 1.1rem;
+    font-size: 0.95rem;
   }
 }
