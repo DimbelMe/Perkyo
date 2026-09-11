@@ -1,18 +1,34 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import "../Style/panel.css";
 
 export default function AdminDashboard() {
   const { logout } = useAuth();
 
   return (
-    <div style={{ padding: 24 }}>
-      <h2>Panel Admin</h2>
-      <button onClick={logout}>Cerrar sesión</button>
-      <ul>
-        <li><Link to="/panel/clientes">Clientes</Link></li>
-        <li><Link to="/panel/materiales">Materiales</Link></li>
-        <li><Link to="/panel/pedidos">Pedidos</Link></li>
-      </ul>
+    <div className="panel-page">
+      <div style={{ maxWidth: 700, margin: "0 auto" }}>
+        <div className="panel-header">
+          <h2 className="panel-title panel-title--centered">
+            Panel de gestión
+          </h2>
+          <button className="panel-logout" onClick={logout}>
+            Cerrar sesión
+          </button>
+        </div>
+
+        <div className="panel-dashboard-grid">
+          <Link to="/panel/clientes" className="panel-dashboard-tile">
+            Clientes
+          </Link>
+          <Link to="/panel/materiales" className="panel-dashboard-tile">
+            Materiales
+          </Link>
+          <Link to="/panel/pedidos" className="panel-dashboard-tile">
+            Pedidos
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
