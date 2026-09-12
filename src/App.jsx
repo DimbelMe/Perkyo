@@ -13,6 +13,7 @@ import AdminDashboard from "./Admin/AdminDashboard.jsx";
 import ClientesList from "./Admin/ClientesList";
 import MaterialesList from "./Admin/MaterialesList";
 import PedidosList from "./Admin/PedidosList";
+import StockList from "./Admin/StockList";
 
 function PublicSite() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Todos");
@@ -68,6 +69,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <PedidosList />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/panel/stock"
+            element={
+              <ProtectedRoute>
+                <StockList />
               </ProtectedRoute>
             }
           />

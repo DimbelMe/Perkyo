@@ -27,6 +27,9 @@ export default function AdminDashboard() {
           <Link to="/panel/pedidos" className="panel-dashboard-tile">
             Pedidos
           </Link>
+          <Link to="/panel/stock" className="panel-dashboard-tile">
+            Stock
+          </Link>
         </div>
       </div>
     </div>
