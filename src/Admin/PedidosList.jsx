@@ -90,7 +90,8 @@ export default function PedidosList() {
   }
 
   async function deletePedido(id) {
-    if (!confirm("¿Eliminar este pedido? Esta acción no se puede deshacer.")) return;
+    if (!confirm("¿Eliminar este pedido? Esta acción no se puede deshacer."))
+      return;
     try {
       await apiRequest(`/pedidos/${id}`, { method: "DELETE", token });
       setPedidos((prev) => prev.filter((p) => p.ID_Pedido !== id));
@@ -122,10 +123,12 @@ export default function PedidosList() {
 
   if (loading) return <p className="panel-page">Cargando...</p>;
   if (error) return <p className="panel-page panel-error">Error: {error}</p>;
-
+  
   return (
     <div className="panel-page">
-      <Link to="/panel" className="panel-back">← Volver al panel</Link>
+      <Link to="/panel" className="panel-back">
+        ← Volver al panel
+      </Link>
       <h2 className="panel-title">Pedidos</h2>
 
       <div className="panel-table-wrap">
@@ -152,7 +155,12 @@ export default function PedidosList() {
                     {isEditing ? (
                       <select
                         value={editForm.ID_Cliente}
-                        onChange={(e) => setEditForm({ ...editForm, ID_Cliente: e.target.value })}
+                        onChange={(e) =>
+                          setEditForm({
+                            ...editForm,
+                            ID_Cliente: e.target.value,
+                          })
+                        }
                       >
                         {clientes.map((c) => (
                           <option key={c.ID_Cliente} value={c.ID_Cliente}>
@@ -166,13 +174,22 @@ export default function PedidosList() {
                       p.ID_Cliente
                     )}
                   </td>
-                  <td>{p.Fecha_Origen ? new Date(p.Fecha_Origen).toLocaleDateString() : ""}</td>
+                  <td>
+                    {p.Fecha_Origen
+                      ? new Date(p.Fecha_Origen).toLocaleDateString()
+                      : ""}
+                  </td>
                   <td>
                     {isEditing ? (
                       <input
                         type="date"
                         value={editForm.Fecha_Entrega}
-                        onChange={(e) => setEditForm({ ...editForm, Fecha_Entrega: e.target.value })}
+                        onChange={(e) =>
+                          setEditForm({
+                            ...editForm,
+                            Fecha_Entrega: e.target.value,
+                          })
+                        }
                       />
                     ) : p.Fecha_Entrega ? (
                       new Date(p.Fecha_Entrega).toLocaleDateString()
@@ -185,7 +202,9 @@ export default function PedidosList() {
                       {isEditing ? (
                         <input
                           value={editForm[f]}
-                          onChange={(e) => setEditForm({ ...editForm, [f]: e.target.value })}
+                          onChange={(e) =>
+                            setEditForm({ ...editForm, [f]: e.target.value })
+                          }
                         />
                       ) : (
                         p[f]
@@ -195,15 +214,28 @@ export default function PedidosList() {
                   <td style={{ whiteSpace: "nowrap" }}>
                     {isEditing ? (
                       <>
-                        <button className="panel-btn panel-btn--primary" onClick={() => saveEdit(p.ID_Pedido)}>
+                        <button
+                          className="panel-btn panel-btn--primary"
+                          onClick={() => saveEdit(p.ID_Pedido)}
+                        >
                           Guardar
                         </button>
-                        <button className="panel-btn" onClick={cancelEdit}>Cancelar</button>
+                        <button className="panel-btn" onClick={cancelEdit}>
+                          Cancelar
+                        </button>
                       </>
                     ) : (
                       <>
-                        <button className="panel-btn panel-btn--primary" onClick={() => startEdit(p)}>Editar</button>
-                        <button className="panel-btn panel-btn--danger" onClick={() => deletePedido(p.ID_Pedido)}>
+                        <button
+                          className="panel-btn panel-btn--primary"
+                          onClick={() => startEdit(p)}
+                        >
+                          Editar
+                        </button>
+                        <button
+                          className="panel-btn panel-btn--danger"
+                          onClick={() => deletePedido(p.ID_Pedido)}
+                        >
                           Eliminar
                         </button>
                       </>
@@ -218,7 +250,9 @@ export default function PedidosList() {
               <td>
                 <select
                   value={newRow.ID_Cliente}
-                  onChange={(e) => setNewRow({ ...newRow, ID_Cliente: e.target.value })}
+                  onChange={(e) =>
+                    setNewRow({ ...newRow, ID_Cliente: e.target.value })
+                  }
                 >
                   <option value="">-- seleccionar --</option>
                   {clientes.map((c) => (
@@ -228,24 +262,34 @@ export default function PedidosList() {
                   ))}
                 </select>
               </td>
-              <td><span className="panel-auto">auto</span></td>
+              <td>
+                <span className="panel-auto">auto</span>
+              </td>
               <td>
                 <input
                   type="date"
                   value={newRow.Fecha_Entrega}
-                  onChange={(e) => setNewRow({ ...newRow, Fecha_Entrega: e.target.value })}
+                  onChange={(e) =>
+                    setNewRow({ ...newRow, Fecha_Entrega: e.target.value })
+                  }
                 />
               </td>
               {["Direccion", "Detalles", "Comentario"].map((f) => (
                 <td key={f}>
                   <input
                     value={newRow[f]}
-                    onChange={(e) => setNewRow({ ...newRow, [f]: e.target.value })}
+                    onChange={(e) =>
+                      setNewRow({ ...newRow, [f]: e.target.value })
+                    }
                   />
                 </td>
               ))}
               <td>
-                <button className="panel-btn panel-btn--primary" onClick={addPedido} disabled={adding}>
+                <button
+                  className="panel-btn panel-btn--primary"
+                  onClick={addPedido}
+                  disabled={adding}
+                >
                   {adding ? "Agregando..." : "Agregar"}
                 </button>
               </td>
@@ -254,7 +298,9 @@ export default function PedidosList() {
         </table>
       </div>
 
-      {pedidos.length === 0 && <p className="panel-empty">No hay pedidos registrados.</p>}
+      {pedidos.length === 0 && (
+        <p className="panel-empty">No hay pedidos registrados.</p>
+      )}
     </div>
   );
 }

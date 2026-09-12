@@ -4,6 +4,9 @@ import { apiRequest } from "../utils/api";
 import { useAuth } from "./AuthContext";
 import "../Style/panel.css";
 
+const COLORES = ["Negro", "Blanco", "Gris", "Azul"];
+const TALLAS = ["S", "M", "L", "XL"];
+
 const emptyForm = {
   Color: "",
   Talla: "",
@@ -110,6 +113,7 @@ export default function StockList() {
 
   const fields = ["Color", "Talla", "Cantidad"];
   const numericFields = ["Cantidad"];
+  const dropdownFields = { Color: COLORES, Talla: TALLAS };
 
   return (
     <div className="panel-page">
@@ -138,20 +142,34 @@ export default function StockList() {
                   {fields.map((f) => (
                     <td key={f}>
                       {isEditing ? (
-                        <input
-                          type={numericFields.includes(f) ? "number" : "text"}
-                          step={numericFields.includes(f) ? "0.01" : undefined}
-                          value={editForm[f]}
-                          onChange={(e) =>
-                            setEditForm({ ...editForm, [f]: e.target.value })
-                          }
-                        />
+                        dropdownFields[f] ? (
+                          <select
+                            value={editForm[f]}
+                            onChange={(e) =>
+                              setEditForm({ ...editForm, [f]: e.target.value })
+                            }
+                          >
+                            <option value="">-- seleccionar --</option>
+                            {dropdownFields[f].map((opt) => (
+                              <option key={opt} value={opt}>
+                                {opt}
+                              </option>
+                            ))}
+                          </select>
+                        ) : (
+                          <input
+                            type={numericFields.includes(f) ? "number" : "text"}
+                            value={editForm[f]}
+                            onChange={(e) =>
+                              setEditForm({ ...editForm, [f]: e.target.value })
+                            }
+                          />
+                        )
                       ) : (
                         m[f]
                       )}
                     </td>
                   ))}
-                  <td>{m.Costo_Total}</td>
                   <td style={{ whiteSpace: "nowrap" }}>
                     {isEditing ? (
                       <>
@@ -190,14 +208,30 @@ export default function StockList() {
               <td>—</td>
               {fields.map((f) => (
                 <td key={f}>
-                  <input
-                    type={numericFields.includes(f) ? "number" : "text"}
-                    step={numericFields.includes(f) ? "0.01" : undefined}
-                    value={newRow[f]}
-                    onChange={(e) =>
-                      setNewRow({ ...newRow, [f]: e.target.value })
-                    }
-                  />
+                  {dropdownFields[f] ? (
+                    <select
+                      value={newRow[f]}
+                      onChange={(e) =>
+                        setNewRow({ ...newRow, [f]: e.target.value })
+                      }
+                    >
+                      <option value="">-- seleccionar --</option>
+                      {dropdownFields[f].map((opt) => (
+                        <option key={opt} value={opt}>
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type={numericFields.includes(f) ? "number" : "text"}
+                      step={numericFields.includes(f) ? "0.01" : undefined}
+                      value={newRow[f]}
+                      onChange={(e) =>
+                        setNewRow({ ...newRow, [f]: e.target.value })
+                      }
+                    />
+                  )}
                 </td>
               ))}
               <td>
