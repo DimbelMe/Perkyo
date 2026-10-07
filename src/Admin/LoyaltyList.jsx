@@ -10,6 +10,8 @@ const emptyForm = {
   Estado: "disponible",
 };
 
+const ESTADOS = ["disponible", "canjeado"];
+
 // Turns "" into null so empty fields never reach the database as empty strings.
 function clean(obj) {
   return Object.fromEntries(
@@ -67,7 +69,7 @@ export default function LoyaltyList() {
 
   function clienteLabel(id) {
     const c = clientes.find((x) => x.ID_Cliente === id);
-    return c ? `${c.nombre} (#${c.ID_Cliente})` : id;
+    return c ? `${c.Nombre} (#${c.ID_Cliente})` : id;
   }
 
   // API DB request to fetch the loyalty data.
@@ -223,12 +225,18 @@ export default function LoyaltyList() {
                   {/* Estado */}
                   <td>
                     {isEditing ? (
-                      <input
+                      <select
                         value={editForm.Estado}
                         onChange={(e) =>
                           setEditForm({ ...editForm, Estado: e.target.value })
                         }
-                      />
+                      >
+                        {ESTADOS.map((s) => (
+                          <option key={s} value={s}>
+                            {s}
+                          </option>
+                        ))}
+                      </select>
                     ) : (
                       l.Estado
                     )}
@@ -285,7 +293,7 @@ export default function LoyaltyList() {
                   <option value="">Selecciona un cliente</option>
                   {clientes.map((c) => (
                     <option key={c.ID_Cliente} value={c.ID_Cliente}>
-                      {c.nombre} (#{c.ID_Cliente})
+                      {c.Nombre} (#{c.ID_Cliente})
                     </option>
                   ))}
                 </select>
@@ -303,12 +311,18 @@ export default function LoyaltyList() {
                 />
               </td>
               <td>
-                <input
+                <select
                   value={newRow.Estado}
                   onChange={(e) =>
                     setNewRow({ ...newRow, Estado: e.target.value })
                   }
-                />
+                >
+                  {ESTADOS.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
               </td>
               <td>Automática</td>
               <td>Automática</td>
