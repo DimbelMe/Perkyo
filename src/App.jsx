@@ -14,6 +14,7 @@ import ClientesList from "./Admin/ClientesList";
 import MaterialesList from "./Admin/MaterialesList";
 import PedidosList from "./Admin/PedidosList";
 import StockList from "./Admin/StockList";
+import LoyaltyList from "./Admin/LoyaltyList";
 
 
 function PublicSite() {
