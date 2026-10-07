@@ -75,7 +75,7 @@ export default function LoyaltyList() {
     setError(""); // a previous failure must not hide the table forever
     setLoading(true);
     try {
-      const data = await apiRequest("/fidelidad", { token });
+      const data = await apiRequest("/lealtad", { token });
       setLoyalty(data);
     } catch (err) {
       setError(err.message);
@@ -105,7 +105,7 @@ export default function LoyaltyList() {
     }
     try {
       // ID_Cliente and the dates are not editable, so they are not sent.
-      const updated = await apiRequest(`/fidelidad/${id}`, {
+      const updated = await apiRequest(`/lealtad/${id}`, {
         method: "PUT",
         token,
         body: clean({
@@ -123,10 +123,10 @@ export default function LoyaltyList() {
   }
 
   async function deleteLoyalty(id) {
-    if (!confirm("¿Eliminar esta fidelidad? Esta acción no se puede deshacer."))
+    if (!confirm("¿Eliminar esta tarjeta? Esta acción no se puede deshacer."))
       return;
     try {
-      await apiRequest(`/fidelidad/${id}`, { method: "DELETE", token });
+      await apiRequest(`/lealtad/${id}`, { method: "DELETE", token });
       setLoyalty((prev) => prev.filter((l) => l.ID_Lealtad !== id));
     } catch (err) {
       alert("Error al eliminar: " + err.message);
@@ -145,7 +145,7 @@ export default function LoyaltyList() {
     setAdding(true);
     try {
       // The dates are filled in automatically by the server.
-      const created = await apiRequest("/fidelidad", {
+      const created = await apiRequest("/lealtad", {
         method: "POST",
         token,
         body: clean({
@@ -179,7 +179,7 @@ export default function LoyaltyList() {
       <Link to="/panel" className="panel-back">
         ← Volver al panel
       </Link>
-      <h2 className="panel-title">Fidelidad</h2>
+      <h2 className="panel-title">Lealtad</h2>
 
       <div className="panel-table-wrap">
         <table className="panel-table">
