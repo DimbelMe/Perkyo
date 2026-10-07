@@ -95,7 +95,7 @@ function App() {
             }
           />
           <Route 
-            path="/panel/fidelidad" 
+            path="/panel/lealtad" 
             element={
               <ProtectedRoute>
                 <LoyaltyList />
