@@ -97,7 +97,7 @@ function App() {
             path="/panel/fidelidad" 
             element={
               <ProtectedRoute>
-                <LoyaltySite />
+                <LoyaltyList />
               </ProtectedRoute>
             } 
           />
