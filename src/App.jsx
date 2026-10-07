@@ -15,6 +15,7 @@ import MaterialesList from "./Admin/MaterialesList";
 import PedidosList from "./Admin/PedidosList";
 import StockList from "./Admin/StockList";
 
+
 function PublicSite() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Todos");
 
@@ -27,6 +28,18 @@ function PublicSite() {
       />
       <section className="Main-Container">
         <Catalogo categoriaSeleccionada={categoriaSeleccionada} />
+      </section>
+      <Footer />
+    </>
+  );
+}
+
+function LoyaltySite() {
+  return (
+    <>
+      <Navbar />
+      <section className="Main-Container">
+        <h1>Bienvenido al sitio de lealtad</h1>
       </section>
       <Footer />
     </>
@@ -79,6 +92,14 @@ function App() {
                 <StockList />
               </ProtectedRoute>
             }
+          />
+          <Route 
+            path="/panel/fidelidad" 
+            element={
+              <ProtectedRoute>
+                <LoyaltySite />
+              </ProtectedRoute>
+            } 
           />
         </Routes>
       </AuthProvider>

@@ -30,6 +30,9 @@ export default function AdminDashboard() {
           <Link to="/panel/stock" className="panel-dashboard-tile">
             Stock
           </Link>
+          <Link to="/panel/fidelidad" className="panel-dashboard-tile">
+            Fidelidad
+          </Link>
         </div>
       </div>
     </div>
